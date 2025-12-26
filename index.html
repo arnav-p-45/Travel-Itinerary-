@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voyager Elite - AI Travel Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- High-fidelity PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww'); 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(27, 33, 26, 0.4) 0%, rgba(27, 33, 26, 0.7) 100%);
+        z-index: -1;
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+
+      @keyframes slide-in-right {
+        from { transform: translateX(20px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      .animate-slide-in-right {
+        animation: slide-in-right 0.4s ease-out forwards;
+      }
+
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 8s linear infinite;
+      }
+
+      /* PDF & Print Fidelity Styles */
+      @media print {
+        @page {
+          size: auto;
+          margin: 10mm;
+        }
+        body {
+          background-image: none !important;
+          background-color: #fcfcfc !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+        body::before { display: none !important; }
+        .card {
+          background-color: white !important;
+          backdrop-filter: none !important;
+          border: 1px solid #e2e8f0 !important;
+          page-break-inside: avoid;
+          box-shadow: none !important;
+          border-radius: 1rem !important;
+        }
+        .no-print { display: none !important; }
+        .print-only { display: block !important; }
+        footer { border-top: 1px solid #eee !important; padding-top: 2rem !important; }
+        
+        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        
+        .bg-[#628141] { background-color: #628141 !important; color: white !important; }
+        .text-[#628141] { color: #628141 !important; }
+        .bg-[#1B211A] { background-color: #1B211A !important; color: white !important; }
+      }
+
+      /* Helper for the Dossier Layout in PDF */
+      #pdf-dossier-root {
+        background-color: #f8fafc;
+        padding: 40px;
+        color: #1B211A;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@^1.9.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="min-h-screen text-[#1B211A]">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

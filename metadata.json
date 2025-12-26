@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Copy of final Planner 10",
+  "description": "A comprehensive AI-powered travel itinerary system with smart budgeting, voice input, and dynamic packing lists.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
