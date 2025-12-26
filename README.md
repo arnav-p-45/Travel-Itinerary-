@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+📖 Project Summary  
+Voyager Elite is a world-class, AI-driven travel orchestration system designed to transform vague travel desires into professional-grade, high-fidelity itineraries. Moving beyond simple list generation, Voyager Elite acts as a digital travel concierge, leveraging the advanced reasoning of AI to synthesize real-time market data, cultural nuances, and logistical complexities into a single, cohesive "Expedition Dossier."
 
-# Run and deploy your AI Studio app
+🌟 The Core Vision  
+The platform is built for the modern traveler who demands more than just a schedule. It bridges the gap between automated planning and premium human curation by focusing on:  
+Intelligence Grounding: Using Google Search to fetch actual flight names, train numbers, and real-time pricing from providers like MakeMyTrip.  
+Insider Protocol: Identifying "Secret Spots" and explicitly flagging "Tourist Traps" to ensure an authentic local experience.  
+Logistical Precision: Calculating travel time buffers, providing dietary translation guides, and generating precise budget breakdowns.
 
-This contains everything you need to run your app locally.
+🛠️ Key Technical Pillars  
+AI Orchestration: Deep integration with the @google/genai SDK for complex reasoning and structured JSON output.  
+Aesthetic Engineering: A premium UI built with React 19 and Tailwind CSS, featuring high-fidelity glassmorphism, fluid animations, and a dedicated "Elite" visual language.  
+Utility & Portability: One-click PDF Export (via html2pdf.js) that transforms the digital plan into a print-ready document, plus Voice Input for hands-free planning.  
+Data Persistence: A secure, localized authentication system and trip archive, allowing users to build a personal library of past and future expeditions.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1IcUNsw0K4VWwbl2x-IqdA5tY1OXcU-9A
+🧩 How It Works  
+Authentication: Access the secure Voyager Elite portal.  
+Parameters: Define your departure/destination hubs, budget, and travel party (Adults, Children, Seniors).  
+Themes: Select from 15+ curated travel themes (Eco-Tourism, Luxury, Culinary, etc.).  
+Execution: Review your day-by-day schedule, book via integrated MMT links, and export your professional PDF dossier.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+Prerequisites: Node.js
 
+Install dependencies:  
+npm install  
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Set the API_KEY in .env.local to your API key  
+
+Run the app: npm run dev
+Run the app:  
+npm run dev
